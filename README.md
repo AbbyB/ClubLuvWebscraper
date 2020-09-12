@@ -14,4 +14,4 @@ Exporting details:
  - Used pyinstaller to package into a single file with a spec file (Imleagues_Webscraper.spec)
  - F flag puts it in a single file
 `pip install pyinstaller`
-`pyinstaller -F Imleagues_Webscraper.spec Imleagues_Webscraper.py`
+`pyinstaller -F Imleagues_Webscraper.spec Imleagues_Webscraper.py`  
