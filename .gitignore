@@ -1,0 +1,8 @@
+.DS_Store
+
+.idea/
+*.iml
+
+build/
+__pycache__/
+dist/
