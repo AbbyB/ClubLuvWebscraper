@@ -51,6 +51,24 @@ if __name__ == '__main__':
     else:
         url = input('\nIMLeagues Link: ')
 
+        # get the URL the user gave
+        driver.get(url)
+        # wait until page has loaded
+        WebDriverWait(driver, 5).until_not(
+            expected_conditions.visibility_of_element_located((By.ID, 'loadingScreen')))
+
+        # parse html
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+        print('\nTeams (copy to All Teams Tab of Google Sheet):')
+        for division in soup.find_all('div', class_='iml-panel-1', attrs={'ng-repeat-start': 'division in initData.divisionTeams'}):
+            name = division.find('a', attrs={'ng-bind': 'division.name'}).text
+            for team in division.find('table', class_='team-list').find_all('a', class_='iml-team-name'):
+                print(name + '\t' + team.text)
+
+        # reset url
+        url = url.rsplit('/', 1)[0] + '/managegames'
+
     print('\n\n---------------------------- IMLeagues Webscraper ----------------------------')
 
     # loop if URL is entered wrong
