@@ -32,13 +32,13 @@ if __name__ == '__main__':
     if getattr(sys, 'frozen', False):
         # if executed as a bundled exe, fetch the driver is in the extracted folder
         chromedriver_path = os.path.join(sys._MEIPASS, 'chromedriver')
-        driver = webdriver.Chrome(chromedriver_path, chrome_options=chrome_options)
+        driver = webdriver.Chrome(chromedriver_path, options=chrome_options)
 
         # get current directory
         filename = os.path.dirname(sys.executable)
     else:
         # if executed as a simple script, the driver should be in `PATH`
-        driver = webdriver.Chrome(chrome_options=chrome_options)
+        driver = webdriver.Chrome(options=chrome_options)
 
         # get current directory
         filename = os.path.dirname(__file__)

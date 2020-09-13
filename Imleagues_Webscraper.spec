@@ -4,8 +4,8 @@ block_cipher = None
 
 
 a = Analysis(['Imleagues_Webscraper.py'],
-             pathex=['/Users/Abby/PycharmProjects/ClubLuv'],
-             binaries=[ ('/Users/Abby/Downloads/chromedriver', '.') ],
+             pathex=[],
+             binaries=[ ('/usr/local/bin/chromedriver', '.') ],
              datas=[],
              hiddenimports=[],
              hookspath=[],
@@ -15,8 +15,7 @@ a = Analysis(['Imleagues_Webscraper.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
-pyz = PYZ(a.pure, a.zipped_data,
-             cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
           a.binaries,
@@ -29,4 +28,4 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           runtime_tmpdir=None,
-          console=True )
+          console=True)
