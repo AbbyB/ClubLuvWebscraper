@@ -16,4 +16,4 @@ Exporting details:
  - F flag puts it in a single file\
 `pip install pyinstaller`\
 `pyinstaller -F Imleagues_Webscraper.spec Imleagues_Webscraper.py`\
-`cp "dist/web scraper" .`
+`zip web_scraper.zip dist/web_scraper`
